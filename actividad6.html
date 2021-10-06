@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/tarjeta.css" type="text/css"/>
+    <title>Tarjetas de felicitación</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">Actividad 6</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Programa #1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="programa2.html">Programa #2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="actividad4.html">Actividad #4</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="actividad6.html">Actividad #6</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="body">
+        <section class="contenido container-fluid">
+            <article id="contenedor-titulo">
+                <h2 id="titulo-principal">Crea tu tarjeta de felicitación</h2>
+            </article>
+            <article id="tema" class="container">
+                <h4 class="titulo">Elige un tema:</h4>
+                <div id="opciones-tema">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="btn-navidad" onclick="seleccionTema('temaProgramador')">Dia del programador
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="btn-navidad" onclick="seleccionTema('temaNavidad')">Navidad
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="btn-navidad" onclick="seleccionTema('temaIndependencia')">Dia de Independencia
+                        </label>
+                    </div>
+                </div>
+            </article>
+            <article id="imagenes-contenedor" class="container">
+                <h4 class="titulo">Seleccione una imagen</h4>
+                <img src="#" id="foto" class="foto">
+                <div id="imagenes-navidad">
+                        <img src="img/navidad1.jpg" id="navidad1" class="galeria" onclick="fotografias('navidad1')">
+                        <img src="img/navidad2.jpg" id="navidad2" class="galeria" onclick="fotografias('navidad2')">
+                        <img src="img/navidad3.jpg" id="navidad3" class="galeria" onclick="fotografias('navidad3')">
+                </div>
+                <div id="imagenes-programador">
+                        <img src="img/programador1.jpg" id="programador1" class="galeria" onclick="fotografias('programador1')">
+                        <img src="img/programador2.jpg" id="programador2" class="galeria" onclick="fotografias('programador2')">
+                        <img src="img/programador3.jpg" id="programador3" class="galeria" onclick="fotografias('programador3')">
+                </div>
+                <div id="imagenes-independencia">
+                        <img src="img/independencia1.jpg" id="independencia1" class="galeria" onclick="fotografias('independencia1')">
+                        <img src="img/independencia2.jpg" id="independencia2" class="galeria" onclick="fotografias('independencia2')">
+                        <img src="img/independencia3.jpg" id="independencia3" class="galeria" onclick="fotografias('independencia3')">
+                </div>
+            </article>
+            <article id="texto-contenedor" class="container">
+                <h4 class="titulo">Contenido</h4>
+                <div id="texto-inputs">
+                    <div id="texto-principal">
+                        <input type="text" class="form-control" id="titulo-tarjeta" placeholder="Titulo de la tarjeta" required>
+                        <input type="text" class="form-control" id="subtitulo-tarjeta" placeholder="Subtitulo de la tarjeta" required>
+                        <input type="text" class="form-control" id="persona-tarjeta" placeholder="Persona autor" required>
+                        <input type="text" class="form-control" id="persona-dirigida" placeholder="Persona dirigida" required>
+                    </div>
+                    <div id="texto-cuerpo">
+                        <textarea type="" class="form-control" id="textcuerpo-tarjeta" placeholder="Cuerpo de la tarjeta" required></textarea>
+                    </div>
+                </div>
+            </article>
+            <article id="color-fondo" class="container">
+                <h4 class="titulo">Color</h4>
+                <div id="contenedor-color">
+                    <div id="color">
+                        <label class="container">
+                            Elija color de fondo: <input type="color" value="#096da9" id="barraDeColor">
+                        </label>
+                    </div>
+                    <div id="btn-aceptar">
+                        <input type="button" value="Previsualizar" class="btn btn-dark" onclick="tarjeta()">
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section id="contenedor-tarjeta">
+            <article id="fondo-tarjeta">
+                <div id="imagen-back">
+                    <div id="imagen-tarjeta">
+                        <div id="diseño-titulo">
+                            <h2 id="tituloFinal-tarjeta"></h2>
+                        </div>
+                        <div id="diseño-subtitulo">
+                            <h4 id="subtituloFinal-tarjeta"></h4>
+                        </div>
+                        <div id="diseño-personaDirigida">
+                            <p id="personaDirigidaFinal-tarjeta"></p>
+                        </div>
+                        <div id="diseño-cuerpo">
+                            <p id="cuerpoFinal-tarjeta"></p>
+                        </div>
+                        <div id="diseño-autor">
+                            <p id="autorFinal-tarjeta"></p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <input type="button" value="Pausar musica" id="musicaBtn" class="btn btn-dark" onclick="pausar()">
+        </section>
+    </div>
+    <script src="js/tarjeta.js"></script>
+</body>
+</html>
